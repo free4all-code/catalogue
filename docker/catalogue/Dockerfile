@@ -4,7 +4,7 @@ COPY . /go/src/github.com/microservices-demo/catalogue
 WORKDIR /go/src/github.com/microservices-demo/catalogue
 
 RUN go get -u github.com/FiloSottile/gvt
-RUN go env -w GOPRIVATE=git.proto.group
+RUN go env GOPRIVATE=git.proto.group
 RUN go get -u git.proto.group/protoobp/pobp-trace-go/pobptrace/tracer
 
 
