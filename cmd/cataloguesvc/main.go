@@ -1,7 +1,7 @@
 package main
 
 import (
-	"git.proto.group/protoobp/pobp-trace-go/pobptrace/tracer"
+	"github.com/free4all-code/pobp-trace-go/pobptrace/tracer"
 	"flag"
 	"fmt"
 	"os"
