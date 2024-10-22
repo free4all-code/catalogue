@@ -4,7 +4,14 @@ COPY . /go/src/github.com/microservices-demo/catalogue
 WORKDIR /go/src/github.com/microservices-demo/catalogue
 
 RUN go get -u github.com/FiloSottile/gvt
+
+RUN go get -u github.com/DataDog/datadog-go/v5/statsd
+RUN go get -u github.com/cespare/xxhash/v2
+RUN go get -u golang.org/x/sys/unix
 RUN go get -u git.proto.group/protoobp/pobp-trace-go/pobptrace/tracer
+
+
+
 RUN gvt restore && \
     CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o /app github.com/microservices-demo/catalogue/cmd/cataloguesvc
 
