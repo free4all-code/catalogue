@@ -5,7 +5,7 @@ WORKDIR /go/src/github.com/microservices-demo/catalogue
 
 RUN go get -u github.com/FiloSottile/gvt
 
-RUN go get -u github.com/DataDog/datadog-go/v5/statsd
+RUN go get github.com/DataDog/datadog-go/v5/statsd
 RUN go get -u github.com/cespare/xxhash/v2
 RUN go get -u golang.org/x/sys/unix
 RUN go get -u git.proto.group/protoobp/pobp-trace-go/pobptrace/tracer
