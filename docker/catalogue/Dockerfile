@@ -1,4 +1,4 @@
-FROM golang:1.12
+FROM golang:1.7
 
 COPY . /go/src/github.com/microservices-demo/catalogue
 WORKDIR /go/src/github.com/microservices-demo/catalogue
