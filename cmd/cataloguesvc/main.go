@@ -1,6 +1,7 @@
 package main
 
 import (
+	"git.proto.group/protoobp/pobp-trace-go/pobptrace/tracer"
 	"flag"
 	"fmt"
 	"os"
@@ -42,6 +43,12 @@ func init() {
 }
 
 func main() {
+	tracer.Start(
+		tracer.WithService("test-server"), 				// имя сервиса 
+		tracer.WithRuntimeMetrics(),       				// включение передачи Go метрик
+	)
+
+   	defer tracer.Stop()
 	var (
 		port   = flag.String("port", "80", "Port to bind HTTP listener") // TODO(pb): should be -addr, default ":80"
 		images = flag.String("images", "./images/", "Image path")
